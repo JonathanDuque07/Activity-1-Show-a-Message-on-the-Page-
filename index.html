@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Mensaje</title>
+    <script>
+        // Función que muestra el mensaje al cargar la página
+        function mostrarMensaje() {
+            document.getElementById("soyelid").innerText = "¡No me gusta la programación!";
+            // Modificar un campo oculto para simular un cambio
+            document.getElementById("cambio").value = "editado";
+        }
+
+        // Función para la alerta de onbeforeunload
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
+</head>
+<body onload="mostrarMensaje()">
+    <!-- El id "soyelid" se usa para mostrar el mensaje aquí -->
+    <p id="soyelid"></p>
+    
+    <!-- Campo oculto que simula un cambio para activar el evento beforeunload -->
+    <input type="hidden" id="cambio" value="">
+</body>
+</html>
